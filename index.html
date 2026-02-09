@@ -1,65 +1,75 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <title>Destri's Library</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="logo">Destri's Library</div>
-        <ul class="menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#tentang">Tentang</a></li>
-            <li><a href="#koleksi">Koleksi</a></li>
-            <li><a href="#layanan">Layanan</a></li>
-            <li><a href="#kontak">Kontak</a></li>
-        </ul>
-    </nav>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
 
-    <!-- HERO -->
-    <section id="home" class="hero">
-        <h1>Selamat Datang di Destri's Library</h1>
-        <p>Website perpustakaan digital sederhana untuk mendukung pembelajaran</p>
-    </section>
+/* NAVBAR */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: #2c3e50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
 
-    <!-- CONTENT -->
-    <section id="tentang" class="content">
-        <h2>Tentang</h2>
-        <p>
-            Destri's Library merupakan website perpustakaan digital yang dirancang
-            untuk memudahkan pengelolaan dan pencarian koleksi buku secara sederhana.
-        </p>
-    </section>
+.logo {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
 
-    <section id="koleksi" class="content gray">
-        <h2>Koleksi</h2>
-        <ul>
-            <li>Buku Pendidikan</li>
-            <li>Buku Ilmu Sosial</li>
-            <li>Buku Teknologi Informasi</li>
-        </ul>
-    </section>
+.menu {
+    list-style: none;
+    display: flex;
+}
 
-    <section id="layanan" class="content">
-        <h2>Layanan</h2>
-        <p>
-            Layanan yang tersedia meliputi informasi koleksi, pencarian buku,
-            serta layanan peminjaman secara manual.
-        </p>
-    </section>
+.menu li {
+    margin-left: 20px;
+}
 
-    <section id="kontak" class="content gray">
-        <h2>Kontak</h2>
-        <p>Email: destrilibrary@gmail.com</p>
-    </section>
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
 
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 Destri's Library</p>
-    </footer>
+.menu li a:hover {
+    color: #f1c40f;
+}
 
-</body>
-</html>
+/* HERO */
+.hero {
+    background-color: #4a6fa5;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+/* CONTENT */
+.content {
+    padding: 50px 80px;
+}
+
+.content h2 {
+    margin-bottom: 15px;
+}
+
+.gray {
+    background-color: #f4f4f4;
+}
+
+/* FOOTER */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
