@@ -1,75 +1,116 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Destri's Library</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
+        /* Navbar */
+        .navbar {
+            background-color: #2c3e50;
+            padding: 15px;
+        }
 
-/* NAVBAR */
-.navbar {
-    position: sticky;
-    top: 0;
-    background-color: #2c3e50;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-}
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+        }
 
-.logo {
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-}
+        .navbar a:hover {
+            text-decoration: underline;
+        }
 
-.menu {
-    list-style: none;
-    display: flex;
-}
+        /* Header */
+        .header {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
 
-.menu li {
-    margin-left: 20px;
-}
+        /* Content */
+        .container {
+            padding: 40px;
+        }
 
-.menu li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-}
+        .section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
 
-.menu li a:hover {
-    color: #f1c40f;
-}
+        h2 {
+            color: #2c3e50;
+        }
 
-/* HERO */
-.hero {
-    background-color: #4a6fa5;
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
-}
+        /* Footer */
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
 
-/* CONTENT */
-.content {
-    padding: 50px 80px;
-}
+    <!-- Menu Navigasi -->
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#koleksi">Koleksi</a>
+        <a href="#kontak">Kontak</a>
+    </div>
 
-.content h2 {
-    margin-bottom: 15px;
-}
+    <!-- Header -->
+    <div class="header" id="home">
+        <h1>Destri's Library</h1>
+        <p>Website Perpustakaan Sederhana untuk Tugas Kuliah</p>
+    </div>
 
-.gray {
-    background-color: #f4f4f4;
-}
+    <!-- Konten -->
+    <div class="container">
 
-/* FOOTER */
-footer {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 15px;
-}
+        <div class="section" id="tentang">
+            <h2>Tentang Perpustakaan</h2>
+            <p>
+                Destri's Library merupakan website perpustakaan sederhana yang dibuat
+                sebagai media informasi dan pembelajaran. Website ini bertujuan untuk
+                menampilkan koleksi buku dan memberikan gambaran pengelolaan perpustakaan
+                berbasis web.
+            </p>
+        </div>
+
+        <div class="section" id="koleksi">
+            <h2>Koleksi Buku</h2>
+            <ul>
+                <li>Buku Teknologi Informasi</li>
+                <li>Buku Ilmu Perpustakaan</li>
+                <li>Buku Sejarah dan Budaya</li>
+                <li>Buku Pendidikan</li>
+            </ul>
+        </div>
+
+        <div class="section" id="kontak">
+            <h2>Kontak</h2>
+            <p>Email: destrilibrary@gmail.com</p>
+            <p>Instagram: @destri.library</p>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2026 Destri's Library | Tugas Kuliah</p>
+    </div>
+
+</body>
+</html>
