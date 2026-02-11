@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Destri Library</title>
+
     <style>
         body {
             margin: 0;
             font-family: Poppins, Montserrat, sans-serif;
-;
             background-color: #90caf9;
         }
 
@@ -22,6 +22,7 @@
             text-decoration: none;
             margin-right: 20px;
             font-weight: bold;
+            cursor: pointer;
         }
 
         .navbar a:hover {
@@ -46,6 +47,7 @@
             padding: 25px;
             margin-bottom: 20px;
             border-radius: 8px;
+            display: none; /* SEMUA DISEMBUNYIKAN DULU */
         }
 
         h2 {
@@ -63,16 +65,16 @@
 </head>
 <body>
 
-    <!-- Menu Navigasi -->
+    <!-- Navbar -->
     <div class="navbar">
-        <a href="#home">Home</a>
-        <a href="#tentang">Tentang</a>
-        <a href="#koleksi">Koleksi</a>
-        <a href="#kontak">Kontak</a>
+        <a onclick="showSection('home')">Home</a>
+        <a onclick="showSection('tentang')">Tentang</a>
+        <a onclick="showSection('koleksi')">Koleksi</a>
+        <a onclick="showSection('kontak')">Kontak</a>
     </div>
 
     <!-- Header -->
-    <div class="header" id="home">
+    <div class="header">
         <h1>Destri Library</h1>
         <p>Website Perpustakaan Sederhana untuk Tugas Kuliah</p>
     </div>
@@ -80,13 +82,21 @@
     <!-- Konten -->
     <div class="container">
 
+        <div class="section" id="home">
+            <h2>Selamat Datang</h2>
+            <p>
+                Selamat datang di website Destri Library.
+                Website ini dibuat sebagai media pembelajaran
+                dan contoh perpustakaan berbasis web sederhana.
+            </p>
+        </div>
+
         <div class="section" id="tentang">
             <h2>Tentang Perpustakaan</h2>
             <p>
-                Destri Library merupakan website perpustakaan sederhana yang dibuat
-                sebagai media informasi dan pembelajaran. Website ini bertujuan untuk
-                menampilkan koleksi buku dan memberikan gambaran pengelolaan perpustakaan
-                berbasis web.
+                Destri Library merupakan website perpustakaan sederhana
+                yang bertujuan untuk menampilkan koleksi buku dan memberikan
+                gambaran pengelolaan perpustakaan berbasis web.
             </p>
         </div>
 
@@ -112,6 +122,21 @@
     <div class="footer">
         <p>© 2026 Destri's Library | Tugas Kuliah</p>
     </div>
+
+    <!-- JavaScript -->
+    <script>
+        function showSection(id) {
+            let sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            document.getElementById(id).style.display = 'block';
+        }
+
+        // Tampilkan Home saat pertama kali dibuka
+        showSection('home');
+    </script>
 
 </body>
 </html>
