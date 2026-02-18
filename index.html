@@ -4,17 +4,47 @@
 <title>Destri Library</title>
 
 <script>
+
+let isLoggedIn = false;
+
 function showPage(pageId) {
+
+    // Batasi akses koleksi & hubungi jika belum login
+    if (!isLoggedIn && (pageId === "koleksi" || pageId === "hubungi")) {
+        alert("Silakan login terlebih dahulu!");
+        pageId = "login";
+    }
+
     var pages = document.getElementsByClassName("page");
     for (var i = 0; i < pages.length; i++) {
         pages[i].style.display = "none";
     }
+
     document.getElementById(pageId).style.display = "block";
 }
+
+function loginUser(event) {
+    event.preventDefault();
+    isLoggedIn = true;
+    document.getElementById("status").innerHTML = "Status: Sudah Login";
+    alert("Login berhasil!");
+    showPage("home");
+}
+
+function logoutUser() {
+    isLoggedIn = false;
+    document.getElementById("status").innerHTML = "Status: Belum Login";
+    alert("Anda sudah logout!");
+    showPage("home");
+}
+
 </script>
 
 </head>
+
 <body onload="showPage('home')">
+
+<h3 id="status">Status: Belum Login</h3>
 
 <!-- NAVIGASI -->
 <nav>
@@ -22,6 +52,7 @@ function showPage(pageId) {
 <button onclick="showPage('koleksi')">Koleksi</button>
 <button onclick="showPage('hubungi')">Hubungi</button>
 <button onclick="showPage('login')">Login</button>
+<button onclick="logoutUser()">Logout</button>
 </nav>
 
 <hr>
@@ -60,9 +91,6 @@ src="https://www.youtube.com/embed/So9o38uD6nM">
 <label>Email:</label><br>
 <input type="email" required><br><br>
 
-<label>Password:</label><br>
-<input type="password" required><br><br>
-    
 <input type="submit" value="Daftar">
 </form>
 
@@ -99,7 +127,7 @@ src="https://www.youtube.com/embed/So9o38uD6nM">
 <!-- LOGIN -->
 <div id="login" class="page" style="display:none;">
 <h2>Login</h2>
-<form>
+<form onsubmit="loginUser(event)">
 <label>Email:</label><br>
 <input type="email" required><br><br>
 
