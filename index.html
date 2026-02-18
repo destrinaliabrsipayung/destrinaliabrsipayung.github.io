@@ -2,19 +2,33 @@
 <html>
 <head>
 <title>Destri Library</title>
-</head>
-<body>
 
+<script>
+function showPage(pageId) {
+    var pages = document.getElementsByClassName("page");
+    for (var i = 0; i < pages.length; i++) {
+        pages[i].style.display = "none";
+    }
+    document.getElementById(pageId).style.display = "block";
+}
+</script>
+
+</head>
+<body onload="showPage('home')">
+
+<!-- NAVIGASI -->
 <nav>
-    <a href="#home">Home</a> |
-    <a href="#koleksi">Koleksi</a> |
-    <a href="#hubungi">Hubungi</a> |
-    <a href="#login">Login</a>
+<button onclick="showPage('home')">Home</button>
+<button onclick="showPage('koleksi')">Koleksi</button>
+<button onclick="showPage('hubungi')">Hubungi</button>
+<button onclick="showPage('login')">Login</button>
 </nav>
 
 <hr>
 
-<section id="home">
+<!-- HOME -->
+<div id="home" class="page">
+
 <h1>Destri Library</h1>
 
 <p>Selamat datang di Destri Library. Website ini dibuat sebagai contoh perpustakaan berbasis web sederhana untuk mendukung pembelajaran. Di sini terdapat informasi mengenai koleksi buku dan gambaran pengelolaan perpustakaan. Semoga website ini dapat bermanfaat dan membantu menambah wawasan para pengunjung.</p>
@@ -30,27 +44,26 @@ Klik untuk Curriculum Vitae saya
 <h3>Cara Mengakses E-journal Perpustakaan USU</h3>
 
 <iframe width="560" height="315"
-src="https://www.youtube.com/embed/So9o38uD6nM"
-></iframe>
+src="https://www.youtube.com/embed/So9o38uD6nM">
+</iframe>
 
-<form action="/submit" method="POST">
+<form>
 <label>First Name:</label><br>
-<input type="text" name="firstname" required><br><br>
+<input type="text" required><br><br>
 
 <label>Nomor HP:</label><br>
-<input type="text" name="nomorhp" required><br><br>
+<input type="text" required><br><br>
 
 <label>Email:</label><br>
-<input type="email" name="email" required><br><br>
+<input type="email" required><br><br>
 
 <input type="submit" value="Daftar">
 </form>
 
-</section>
+</div>
 
-<hr>
-
-<section id="koleksi">
+<!-- KOLEKSI -->
+<div id="koleksi" class="page" style="display:none;">
 <h2>Koleksi Buku</h2>
 <ul>
 <li>Pemrograman Dasar</li>
@@ -58,11 +71,10 @@ src="https://www.youtube.com/embed/So9o38uD6nM"
 <li>Analisis dan Perancangan Sistem</li>
 <li>Manajemen Perpustakaan</li>
 </ul>
-</section>
+</div>
 
-<hr>
-
-<section id="hubungi">
+<!-- HUBUNGI -->
+<div id="hubungi" class="page" style="display:none;">
 <h2>Hubungi Saya</h2>
 <p>No HP: 08xxxxxxxxxx</p>
 
@@ -76,12 +88,10 @@ src="https://www.youtube.com/embed/So9o38uD6nM"
 
 <input type="submit" value="Kirim">
 </form>
-</section>
-
-<hr>
+</div>
 
 <!-- LOGIN -->
-<section id="login">
+<div id="login" class="page" style="display:none;">
 <h2>Login</h2>
 <form>
 <label>Email:</label><br>
@@ -92,7 +102,7 @@ src="https://www.youtube.com/embed/So9o38uD6nM"
 
 <input type="submit" value="Login">
 </form>
-</section>
+</div>
 
 </body>
 </html>
