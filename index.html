@@ -4,7 +4,6 @@
 <title>Destri Library - Perpustakaan Desa</title>
 
 <script>
-
 let isLoggedIn = false;
 
 function showPage(pageId) {
@@ -38,7 +37,6 @@ function logoutUser() {
     alert("Anda sudah logout!");
     showPage("home");
 }
-
 </script>
 
 <style>
@@ -119,30 +117,6 @@ h2, h3 {
     color: #2e7d32;
 }
 
-/* ===== TEXT ===== */
-p {
-    line-height: 1.7;
-    color: #444;
-}
-
-/* ===== LINKS ===== */
-a {
-    color: #2e7d32;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* ===== LIST ===== */
-ul {
-    list-style-type: "🌾 ";
-    padding-left: 25px;
-    font-size: 16px;
-}
-
 /* ===== FORM ===== */
 input, textarea {
     width: 100%;
@@ -173,79 +147,7 @@ iframe {
     margin-top: 15px;
 }
 
-/* ===== FOOTER ===== */
-footer {
-    text-align: center;
-    background: #1b5e20;
-    color: white;
-    padding: 15px;
-    margin-top: 50px;
-    font-size: 14px;
-}
-
-</style>
-
-</head>
-
-<body onload="showPage('home')">
-
-<h3 id="status">Status: Belum Login</h3>
-
-<nav>
-<button onclick="showPage('home')">Home</button>
-<button onclick="showPage('koleksi')">Koleksi</button>
-<button onclick="showPage('hubungi')">Hubungi</button>
-<button onclick="showPage('login')">Login</button>
-<button onclick="logoutUser()">Logout</button>
-</nav>
-
-<!-- HOME -->
-<div id="home" class="page">
-
-<h1>🌾 Destri Library</h1>
-
-<p>
-Selamat datang di Perpustakaan Desa Destri Library. Perpustakaan ini hadir untuk meningkatkan literasi masyarakat pedesaan, khususnya masyarakat petani, melalui akses informasi, teknologi, dan pendidikan berkelanjutan.
-</p>
-
-<a href="https://www.instagram.com/destri_spy?igsh=MXF5bG1qd3d0eXJvcQ==">Instagram Saya</a>
-
-<p>
-<a href="https://drive.google.com/file/d/1XlDoDJRZHB7NGqqhOmAwwHGr4jcDCoVi/view?usp=drive_link">
-Curriculum Vitae
-</a>
-</p>
-
-<h3>Cara Mengakses E-journal Perpustakaan USU</h3>
-
-<iframe height="315"
-src="https://www.youtube.com/embed/So9o38uD6nM">
-</iframe>
-
-<h2>Formulir Pendaftaran Anggota Baru</h2>
-<form>
-<label>Last Name:</label>
-<input type="text" required>
-
-<label>First Name:</label>
-<input type="text" required>
-
-<label>Nomor HP:</label>
-<input type="text" required>
-
-<label>Email:</label>
-<input type="email" required>
-
-<label>Password:</label>
-<input type="password" required>
-    
-<input type="submit" value="Daftar">
-</form>
-
-</div>
-
 /* ===== KATALOG PERPUSTAKAAN STYLE ===== */
-
 .book-container {
     display: flex;
     flex-direction: column;
@@ -270,7 +172,7 @@ src="https://www.youtube.com/embed/So9o38uD6nM">
 }
 
 .book-card img {
-    width: 110px;          /* ukuran tetap */
+    width: 110px;
     height: 150px;
     object-fit: cover;
     border-radius: 6px;
@@ -292,6 +194,46 @@ src="https://www.youtube.com/embed/So9o38uD6nM">
     font-weight: bold;
     color: #2e7d32;
 }
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    background: #1b5e20;
+    color: white;
+    padding: 15px;
+    margin-top: 50px;
+    font-size: 14px;
+}
+
+</style>
+</head>
+
+<body onload="showPage('home')">
+
+<h3 id="status">Status: Belum Login</h3>
+
+<nav>
+<button onclick="showPage('home')">Home</button>
+<button onclick="showPage('koleksi')">Koleksi</button>
+<button onclick="showPage('hubungi')">Hubungi</button>
+<button onclick="showPage('login')">Login</button>
+<button onclick="logoutUser()">Logout</button>
+</nav>
+
+<!-- HOME -->
+<div id="home" class="page">
+<h1>🌾 Destri Library</h1>
+
+<p>
+Selamat datang di Perpustakaan Desa Destri Library. Perpustakaan ini hadir untuk meningkatkan literasi masyarakat pedesaan, khususnya masyarakat petani.
+</p>
+
+<h3>Cara Mengakses E-journal Perpustakaan USU</h3>
+<iframe height="315"
+src="https://www.youtube.com/embed/So9o38uD6nM">
+</iframe>
+</div>
+
 <!-- KOLEKSI -->
 <div id="koleksi" class="page">
 
@@ -300,7 +242,7 @@ src="https://www.youtube.com/embed/So9o38uD6nM">
 <div class="book-container">
 
 <div class="book-card">
-<img src="images/buku1.jpg" alt="Pemrograman Dasar">
+<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794">
 <div class="book-info">
 <h3>Pemrograman Dasar</h3>
 <p><span class="book-label">Penulis:</span> Andi Setiawan</p>
@@ -311,18 +253,18 @@ src="https://www.youtube.com/embed/So9o38uD6nM">
 </div>
 
 <div class="book-card">
-<img src="images/buku2.jpg" alt="Pertanian Modern">
+<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6">
 <div class="book-info">
 <h3>Pertanian Modern</h3>
 <p><span class="book-label">Penulis:</span> Ahmad Tani</p>
 <p><span class="book-label">Tahun:</span> 2023</p>
 <p><span class="book-label">Kategori:</span> Pertanian</p>
-<p>Membahas teknik pertanian modern untuk meningkatkan hasil panen masyarakat desa.</p>
+<p>Membahas teknik pertanian modern untuk meningkatkan hasil panen petani desa.</p>
 </div>
 </div>
 
 <div class="book-card">
-<img src="images/buku3.jpg" alt="Manajemen Perpustakaan">
+<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
 <div class="book-info">
 <h3>Manajemen Perpustakaan</h3>
 <p><span class="book-label">Penulis:</span> Siti Rahma</p>
@@ -339,17 +281,6 @@ src="https://www.youtube.com/embed/So9o38uD6nM">
 <div id="hubungi" class="page">
 <h2>Hubungi Saya</h2>
 <p><a href="https://wa.me/6285277276536">Hubungi Whatsapp</a></p>
-
-<h3>Tinggalkan Komentar</h3>
-<form>
-<label>Nama:</label>
-<input type="text" required>
-
-<label>Komentar:</label>
-<textarea rows="4" required></textarea>
-
-<input type="submit" value="Kirim">
-</form>
 </div>
 
 <!-- LOGIN -->
