@@ -244,51 +244,92 @@ src="https://www.youtube.com/embed/So9o38uD6nM">
 
 </div>
 
+/* ===== KATALOG PERPUSTAKAAN STYLE ===== */
+
+.book-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.book-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #dcdcdc;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.book-card:hover {
+    background-color: #f1f8f1;
+}
+
+.book-card img {
+    width: 110px;          /* ukuran tetap */
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.book-info h3 {
+    margin: 0;
+    color: #1b5e20;
+}
+
+.book-info p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #444;
+}
+
+.book-label {
+    font-weight: bold;
+    color: #2e7d32;
+}
 <!-- KOLEKSI -->
 <div id="koleksi" class="page">
 
-<h2>🌾 Koleksi Buku Perpustakaan Desa</h2>
+<h2>🌾 Katalog Buku Perpustakaan Desa</h2>
 
 <div class="book-container">
 
 <div class="book-card">
-<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="Pemrograman Dasar">
+<img src="images/buku1.jpg" alt="Pemrograman Dasar">
+<div class="book-info">
 <h3>Pemrograman Dasar</h3>
-<p><strong>Penulis:</strong> Andi Setiawan</p>
-<p><strong>Tahun:</strong> 2022</p>
-<p>Buku ini membahas dasar-dasar pemrograman untuk pemula dengan contoh sederhana.</p>
+<p><span class="book-label">Penulis:</span> Andi Setiawan</p>
+<p><span class="book-label">Tahun:</span> 2022</p>
+<p><span class="book-label">Kategori:</span> Teknologi Informasi</p>
+<p>Buku pengantar untuk memahami logika pemrograman dan algoritma dasar.</p>
+</div>
 </div>
 
 <div class="book-card">
-<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Basis Data">
-<h3>Basis Data</h3>
-<p><strong>Penulis:</strong> Rina Sari</p>
-<p><strong>Tahun:</strong> 2021</p>
-<p>Mempelajari konsep database, SQL, dan penerapannya dalam sistem informasi.</p>
+<img src="images/buku2.jpg" alt="Pertanian Modern">
+<div class="book-info">
+<h3>Pertanian Modern</h3>
+<p><span class="book-label">Penulis:</span> Ahmad Tani</p>
+<p><span class="book-label">Tahun:</span> 2023</p>
+<p><span class="book-label">Kategori:</span> Pertanian</p>
+<p>Membahas teknik pertanian modern untuk meningkatkan hasil panen masyarakat desa.</p>
+</div>
 </div>
 
 <div class="book-card">
-<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794" alt="Analisis Sistem">
-<h3>Analisis dan Perancangan Sistem</h3>
-<p><strong>Penulis:</strong> Budi Santoso</p>
-<p><strong>Tahun:</strong> 2020</p>
-<p>Menjelaskan tahapan analisis sistem dan perancangan sistem berbasis kebutuhan pengguna.</p>
-</div>
-
-<div class="book-card">
-<img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66" alt="Manajemen Perpustakaan">
+<img src="images/buku3.jpg" alt="Manajemen Perpustakaan">
+<div class="book-info">
 <h3>Manajemen Perpustakaan</h3>
-<p><strong>Penulis:</strong> Siti Rahma</p>
-<p><strong>Tahun:</strong> 2019</p>
+<p><span class="book-label">Penulis:</span> Siti Rahma</p>
+<p><span class="book-label">Tahun:</span> 2019</p>
+<p><span class="book-label">Kategori:</span> Perpustakaan</p>
 <p>Panduan pengelolaan perpustakaan desa untuk meningkatkan literasi masyarakat.</p>
 </div>
-
-<div class="book-card">
-<img src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6" alt="Pertanian Modern">
-<h3>Pertanian Modern</h3>
-<p><strong>Penulis:</strong> Ahmad Tani</p>
-<p><strong>Tahun:</strong> 2023</p>
-<p>Membahas teknik pertanian modern untuk meningkatkan hasil panen masyarakat desa.</p>
 </div>
 
 </div>
