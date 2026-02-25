@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Destri Library</title>
+<title>Destri Library - Perpustakaan Desa</title>
 
 <script>
 
@@ -17,9 +17,11 @@ function showPage(pageId) {
     var pages = document.getElementsByClassName("page");
     for (var i = 0; i < pages.length; i++) {
         pages[i].style.display = "none";
+        pages[i].classList.remove("fade-in");
     }
 
     document.getElementById(pageId).style.display = "block";
+    document.getElementById(pageId).classList.add("fade-in");
 }
 
 function loginUser(event) {
@@ -39,125 +41,146 @@ function logoutUser() {
 
 </script>
 
-<!-- ===== TAMBAHAN CSS ===== -->
 <style>
 
-/* Background pedesaan */
+/* ===== BACKGROUND SAWAH ===== */
 body {
-    font-family: 'Segoe UI', sans-serif;
     margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom, #e8f5e9, #ffffff);
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.9)),
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef");
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-/* Status */
+/* ===== STATUS BAR ===== */
 #status {
-    background-color: #2e7d32;
+    background: #1b5e20;
     color: white;
     padding: 12px;
     text-align: center;
-    margin: 0;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
-/* Navigasi */
+/* ===== NAVIGATION ===== */
 nav {
-    background-color: #4caf50;
+    background: #2e7d32;
     padding: 15px;
     text-align: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
 
 nav button {
-    background-color: white;
+    background: white;
     border: none;
-    padding: 10px 18px;
+    padding: 10px 20px;
     margin: 5px;
-    border-radius: 25px;
+    border-radius: 30px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 nav button:hover {
-    background-color: #2e7d32;
+    background: #1b5e20;
     color: white;
-    transform: scale(1.05);
+    transform: translateY(-3px);
 }
 
-/* Card halaman */
+/* ===== PAGE CARD ===== */
 .page {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 25px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    max-width: 950px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    display: none;
 }
 
-/* Judul */
-h1, h2, h3 {
+/* ===== ANIMATION ===== */
+.fade-in {
+    animation: fadeEffect 0.7s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* ===== HEADINGS ===== */
+h1 {
+    color: #1b5e20;
+    text-align: center;
+}
+
+h2, h3 {
     color: #2e7d32;
 }
 
-/* Paragraf */
+/* ===== TEXT ===== */
 p {
-    line-height: 1.6;
+    line-height: 1.7;
     color: #444;
 }
 
-/* List koleksi */
-ul {
-    list-style-type: "🌾 ";
-    padding-left: 25px;
-}
-
-/* Form */
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    margin-bottom: 12px;
-}
-
-input[type="submit"] {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-input[type="submit"]:hover {
-    background-color: #2e7d32;
-}
-
-/* Link */
+/* ===== LINKS ===== */
 a {
-    color: #1b5e20;
-    text-decoration: none;
+    color: #2e7d32;
     font-weight: bold;
+    text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-/* Video */
-iframe {
-    max-width: 100%;
-    border-radius: 10px;
-    margin-top: 10px;
+/* ===== LIST ===== */
+ul {
+    list-style-type: "🌾 ";
+    padding-left: 25px;
+    font-size: 16px;
 }
 
-/* Footer nuansa desa */
-body::after {
-    content: "Perpustakaan Desa • Mendukung Literasi Masyarakat Tani 🌾";
-    display: block;
-    text-align: center;
-    padding: 15px;
-    background-color: #2e7d32;
+/* ===== FORM ===== */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+input[type="submit"] {
+    background: #2e7d32;
     color: white;
-    margin-top: 40px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+    background: #1b5e20;
+}
+
+/* ===== VIDEO ===== */
+iframe {
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    background: #1b5e20;
+    color: white;
+    padding: 15px;
+    margin-top: 50px;
+    font-size: 14px;
 }
 
 </style>
@@ -176,45 +199,45 @@ body::after {
 <button onclick="logoutUser()">Logout</button>
 </nav>
 
-<hr>
-
 <!-- HOME -->
 <div id="home" class="page">
 
-<h1>Destri Library 🌾</h1>
+<h1>🌾 Destri Library</h1>
 
-<p>Selamat datang di Destri Library. Website ini dibuat sebagai contoh perpustakaan berbasis web sederhana untuk mendukung pembelajaran dan literasi masyarakat desa, khususnya masyarakat petani. Perpustakaan ini hadir untuk meningkatkan pengetahuan dan kesejahteraan melalui akses informasi.</p>
+<p>
+Selamat datang di Perpustakaan Desa Destri Library. Perpustakaan ini hadir untuk meningkatkan literasi masyarakat pedesaan, khususnya masyarakat petani, melalui akses informasi, teknologi, dan pendidikan berkelanjutan.
+</p>
 
-<a href="https://www.instagram.com/destri_spy?igsh=MXF5bG1qd3d0eXJvcQ==">Klik untuk Instagram saya</a>
+<a href="https://www.instagram.com/destri_spy?igsh=MXF5bG1qd3d0eXJvcQ==">Instagram Saya</a>
 
 <p>
 <a href="https://drive.google.com/file/d/1XlDoDJRZHB7NGqqhOmAwwHGr4jcDCoVi/view?usp=drive_link">
-Klik untuk Curriculum Vitae saya
+Curriculum Vitae
 </a>
 </p>
 
 <h3>Cara Mengakses E-journal Perpustakaan USU</h3>
 
-<iframe width="560" height="315"
+<iframe height="315"
 src="https://www.youtube.com/embed/So9o38uD6nM">
 </iframe>
 
 <h2>Formulir Pendaftaran Anggota Baru</h2>
 <form>
-<label>Last Name:</label><br>
-<input type="text" required><br>
+<label>Last Name:</label>
+<input type="text" required>
 
-<label>First Name:</label><br>
-<input type="text" required><br>
+<label>First Name:</label>
+<input type="text" required>
 
-<label>Nomor HP:</label><br>
-<input type="text" required><br>
+<label>Nomor HP:</label>
+<input type="text" required>
 
-<label>Email:</label><br>
-<input type="email" required><br>
+<label>Email:</label>
+<input type="email" required>
 
-<label>Password:</label><br>
-<input type="password" required><br>
+<label>Password:</label>
+<input type="password" required>
     
 <input type="submit" value="Daftar">
 </form>
@@ -222,7 +245,7 @@ src="https://www.youtube.com/embed/So9o38uD6nM">
 </div>
 
 <!-- KOLEKSI -->
-<div id="koleksi" class="page" style="display:none;">
+<div id="koleksi" class="page">
 <h2>Koleksi Buku</h2>
 <ul>
 <li>Pemrograman Dasar</li>
@@ -233,35 +256,39 @@ src="https://www.youtube.com/embed/So9o38uD6nM">
 </div>
 
 <!-- HUBUNGI -->
-<div id="hubungi" class="page" style="display:none;">
+<div id="hubungi" class="page">
 <h2>Hubungi Saya</h2>
-<p><a href="https://wa.me/6285277276536">Hubungi Whatsapp Saya</a></p>
+<p><a href="https://wa.me/6285277276536">Hubungi Whatsapp</a></p>
 
 <h3>Tinggalkan Komentar</h3>
 <form>
-<label>Nama:</label><br>
-<input type="text" required><br>
+<label>Nama:</label>
+<input type="text" required>
 
-<label>Komentar:</label><br>
-<textarea rows="4" cols="30" required></textarea><br>
+<label>Komentar:</label>
+<textarea rows="4" required></textarea>
 
 <input type="submit" value="Kirim">
 </form>
 </div>
 
 <!-- LOGIN -->
-<div id="login" class="page" style="display:none;">
+<div id="login" class="page">
 <h2>Login</h2>
 <form onsubmit="loginUser(event)">
-<label>Email:</label><br>
-<input type="email" required><br>
+<label>Email:</label>
+<input type="email" required>
 
-<label>Password:</label><br>
-<input type="password" required><br>
+<label>Password:</label>
+<input type="password" required>
 
 <input type="submit" value="Login">
 </form>
 </div>
+
+<footer>
+Perpustakaan Desa • Meningkatkan Literasi Masyarakat Tani 🌾
+</footer>
 
 </body>
 </html>
