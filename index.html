@@ -261,8 +261,8 @@
         }
 
         .event-btn {
-            background: #ffb300;
-            color: #333;
+            background: #25D366; /* Warna khas WhatsApp */
+            color: white;
             border: none;
             padding: 12px 25px;
             border-radius: 25px;
@@ -272,11 +272,11 @@
             transition: 0.3s;
             display: inline-block;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-decoration: none;
         }
 
         .event-btn:hover {
-            background: #ffa000;
-            color: white;
+            background: #128C7E;
             transform: scale(1.05);
         }
 
@@ -477,18 +477,20 @@
         <div class="event-banner">
             <span class="event-badge">🔥 Event Mendatang</span>
             <h2>NGARIT (Ngobrol Asik Ringan Seputar perTanian)</h2>
-            <p><strong>Topik:</strong> "Rahasia Bikin Pupuk Kompos Sendiri Anti Gagal & Hemat Biaya!"</p>
+            <p><strong>Topik:</strong> "Strategi Memaksimalkan Lahan Tani & Mendongkrak Keuntungan Hasil Panen!"</p>
             
             <ul class="event-details">
-                <li>🕒 <strong>Waktu:</strong> Sabtu, 21 Maret 2026 | 15.30 WIB (Ba'da Ashar)</li>
+                <li>🕒 <strong>Waktu:</strong> Sabtu, 21 Maret 2026 | 15.30 WIB</li>
                 <li>📍 <strong>Tempat:</strong> Teras Depan SEED Library</li>
                 <li>👨‍🌾 <strong>Pemateri:</strong> Bapak Suwarno (Ketua Kelompok Tani Desa)</li>
-                <li>☕ <strong>Fasilitas:</strong> Kopi Hitam, Pisang Rebus, dan Ilmu Bermanfaat</li>
+                <li>☕ <strong>Fasilitas:</strong> Coffee Break, Jajanan Lokal, & Ringkasan Materi</li>
             </ul>
             
-            <p class="event-desc">"Mari kumpul, ngopi bareng, dan diskusi santai seputar masalah tani kita. Acaranya lesehan, bebas nanya, dan pastinya seru. Yuk, ramaikan!"</p>
+            <p class="event-desc">"Mari kumpul dan diskusi santai tentang cara jitu mengolah lahan agar hasil panen melimpah dan harga jual lebih tinggi. Yuk, ramaikan!"</p>
             
-            <button class="event-btn" onclick="showPage('hubungi')">Daftar NGARIT Sekarang! ➔</button>
+            <button class="event-btn" onclick="window.open('https://wa.me/6285277276536?text=Halo%20Admin,%20saya%20ingin%20mendaftar%20untuk%20ikut%20acara%20NGARIT%20hari%20Sabtu%20nanti.%20Mohon%20info%20selanjutnya.', '_blank')">
+                💬 Daftar via WhatsApp
+            </button>
         </div>
         </div>
 
@@ -585,12 +587,12 @@
             </a>
         </p>
 
-        <h3>Tinggalkan Komentar atau Daftar Event</h3>
+        <h3>Tinggalkan Komentar</h3>
         <form>
             <label>Nama Lengkap:</label>
             <input type="text" placeholder="Masukkan nama Anda" required>
-            <label>Pesan / Keperluan:</label>
-            <textarea rows="5" placeholder="Contoh: Saya ingin daftar acara NGARIT..." required></textarea>
+            <label>Komentar atau Pesan:</label>
+            <textarea rows="5" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
             <input type="submit" value="Kirim Pesan">
         </form>
     </div>
