@@ -109,13 +109,13 @@
             background: #2e7d32;
             padding: 15px 30px;
             display: flex;
-            justify-content: space-between; /* Memisahkan kiri dan kanan */
+            justify-content: space-between;
             align-items: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         .nav-left button {
-            background: #ffc107; /* Warna aksen untuk tombol login/kiri */
+            background: #ffc107;
             color: #333;
         }
 
@@ -194,6 +194,92 @@
             line-height: 1.6;
         }
 
+        /* ===== EVENT BANNER STYLE ===== */
+        .event-banner {
+            background: linear-gradient(135deg, #f1f8e9 0%, #dcedc8 100%);
+            border-left: 8px solid #ffb300;
+            padding: 25px 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .event-banner:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        }
+
+        .event-badge {
+            background: #ffb300;
+            color: #333;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 900;
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .event-banner h2 {
+            margin-top: 0;
+            color: #1b5e20;
+            border-bottom: none;
+            padding-bottom: 5px;
+            font-size: 24px;
+        }
+
+        .event-details {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+            background: rgba(255,255,255,0.7);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px dashed #7cb342;
+        }
+
+        .event-details li {
+            margin-bottom: 10px;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .event-details li:last-child {
+            margin-bottom: 0;
+        }
+
+        .event-desc {
+            font-style: italic;
+            color: #444;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .event-btn {
+            background: #ffb300;
+            color: #333;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .event-btn:hover {
+            background: #ffa000;
+            color: white;
+            transform: scale(1.05);
+        }
+
         /* ===== FORM UMUM ===== */
         form {
             background: #f9fdf9;
@@ -217,7 +303,7 @@
             border: 1px solid #ccc;
             margin-bottom: 20px;
             font-size: 14px;
-            box-sizing: border-box; /* Mencegah form melebar */
+            box-sizing: border-box;
             transition: border-color 0.3s;
         }
 
@@ -241,7 +327,7 @@
             background: #1b5e20;
         }
 
-        /* ===== AUTHENTICATION SECTION (LOGIN/DAFTAR) ===== */
+        /* ===== AUTHENTICATION SECTION ===== */
         .auth-container {
             max-width: 500px;
             margin: 0 auto;
@@ -276,7 +362,7 @@
         /* ===== VIDEO ===== */
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             border-radius: 15px;
@@ -387,7 +473,24 @@
         <p style="text-align: justify; font-size: 16px;">
             Perpustakaan ini tidak hanya menyediakan koleksi buku umum, tetapi juga menghadirkan sumber informasi yang relevan dengan kebutuhan masyarakat desa, khususnya di bidang pertanian, peternakan, perkebunan, dan pengembangan usaha tani. Sebagai ruang belajar terbuka untuk semua kalangan, perpustakaan ini berfungsi sebagai tempat membaca, berdiskusi, dan berbagi pengetahuan.
         </p>
-    </div>
+
+        <div class="event-banner">
+            <span class="event-badge">🔥 Event Mendatang</span>
+            <h2>NGARIT (Ngobrol Asik Ringan Seputar perTanian)</h2>
+            <p><strong>Topik:</strong> "Rahasia Bikin Pupuk Kompos Sendiri Anti Gagal & Hemat Biaya!"</p>
+            
+            <ul class="event-details">
+                <li>🕒 <strong>Waktu:</strong> Sabtu, 21 Maret 2026 | 15.30 WIB (Ba'da Ashar)</li>
+                <li>📍 <strong>Tempat:</strong> Teras Depan SEED Library</li>
+                <li>👨‍🌾 <strong>Pemateri:</strong> Bapak Suwarno (Ketua Kelompok Tani Desa)</li>
+                <li>☕ <strong>Fasilitas:</strong> Kopi Hitam, Pisang Rebus, dan Ilmu Bermanfaat</li>
+            </ul>
+            
+            <p class="event-desc">"Mari kumpul, ngopi bareng, dan diskusi santai seputar masalah tani kita. Acaranya lesehan, bebas nanya, dan pastinya seru. Yuk, ramaikan!"</p>
+            
+            <button class="event-btn" onclick="showPage('hubungi')">Daftar NGARIT Sekarang! ➔</button>
+        </div>
+        </div>
 
     <div id="auth" class="page">
         <div class="auth-container">
@@ -482,12 +585,12 @@
             </a>
         </p>
 
-        <h3>Tinggalkan Komentar</h3>
+        <h3>Tinggalkan Komentar atau Daftar Event</h3>
         <form>
             <label>Nama Lengkap:</label>
             <input type="text" placeholder="Masukkan nama Anda" required>
-            <label>Komentar atau Pesan:</label>
-            <textarea rows="5" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+            <label>Pesan / Keperluan:</label>
+            <textarea rows="5" placeholder="Contoh: Saya ingin daftar acara NGARIT..." required></textarea>
             <input type="submit" value="Kirim Pesan">
         </form>
     </div>
@@ -518,7 +621,7 @@
         </p>
         <p>
             <a href="https://drive.google.com/file/d/1XlDoDJRZHB7NGqqhOmAwwHGr4jcDCoVi/view?usp=drive_link" target="_blank" style="color: #4285F4; font-weight: bold; text-decoration: none;">
-                📄 Unduh Curriculum Vitae (CV)
+                📄 Lihat Curriculum Vitae (CV)
             </a>
         </p>
 
