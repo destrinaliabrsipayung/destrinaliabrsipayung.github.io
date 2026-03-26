@@ -78,6 +78,31 @@
             alert("Anda sudah logout!");
             showPage("home");
         }
+        // Fungsi untuk Kalkulator Estimasi Panen (Operasi Perkalian)
+        function hitungPanen() {
+            // Mengambil nilai dari input HTML
+            let luas = document.getElementById("luas-lahan").value;
+            let estimasi = document.getElementById("estimasi-per-m2").value;
+
+            // Validasi: pastikan kolom tidak kosong
+            if(luas === "" || estimasi === "") {
+                alert("Harap masukkan angka pada kedua kolom untuk menghitung!");
+                return;
+            }
+
+            // OPERASI PERKALIAN (*)
+            let totalPanen = parseFloat(luas) * parseFloat(estimasi);
+
+            // Menampilkan hasil ke layar
+            document.getElementById("hasil-panen").innerHTML = "Estimasi Total Panen: <strong>" + totalPanen + " kg</strong> 🌾";
+            
+            // Animasi kecil saat tombol ditekan
+            document.getElementById("hasil-panen").style.color = "#ffb300";
+            setTimeout(() => {
+                document.getElementById("hasil-panen").style.color = "#1b5e20";
+            }, 500);
+        }
+        
     </script>
 
     <style>
@@ -491,6 +516,27 @@
             <button class="event-btn" onclick="window.open('https://wa.me/6285277276536?text=Halo%20Admin,%20saya%20ingin%20mendaftar%20untuk%20ikut%20acara%20NGARIT%20hari%20Sabtu%20nanti.%20Mohon%20info%20selanjutnya.', '_blank')">
                 💬 Daftar via WhatsApp
             </button>
+        </div>
+        <div class="calc-container" style="background: #e8f5e9; padding: 25px; border-radius: 12px; margin-top: 40px; border-left: 8px solid #4caf50; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+            <h3 style="margin-top: 0; color: #2e7d32;">🧮 Kalkulator Estimasi Panen</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 20px;">Hitung perkiraan hasil panen berdasarkan luas lahan Anda. Cocok untuk mempraktikkan ilmu dari acara NGARIT!</p>
+
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 15px;">
+                <div style="flex: 1; min-width: 200px;">
+                    <label style="font-size: 14px;">Luas Lahan (m²):</label>
+                    <input type="number" id="luas-lahan" placeholder="Contoh: 1000" style="margin-bottom: 0;" required>
+                </div>
+                <div style="flex: 1; min-width: 200px;">
+                    <label style="font-size: 14px;">Estimasi Panen per m² (kg):</label>
+                    <input type="number" id="estimasi-per-m2" value="2" placeholder="Contoh: 2" style="margin-bottom: 0;" required>
+                </div>
+            </div>
+
+            <button onclick="hitungPanen()" style="background: #4caf50; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; transition: 0.3s; font-size: 16px;">Hitung Sekarang</button>
+
+            <div style="margin-top: 20px; padding: 15px; background: white; border-radius: 8px; text-align: center; border: 1px dashed #4caf50;">
+                <p id="hasil-panen" style="margin: 0; font-size: 18px; color: #1b5e20; transition: color 0.3s;">Estimasi Total Panen: <strong>- kg</strong> 🌾</p>
+            </div>
         </div>
         </div>
 
