@@ -9,26 +9,19 @@
         let isLoggedIn = false;
 
         function showPage(pageId) {
-            // Proteksi halaman yang butuh login
             if (!isLoggedIn && (pageId === "koleksi" || pageId === "hubungi")) {
                 alert("Silakan login terlebih dahulu untuk mengakses halaman ini!");
                 pageId = "auth";
                 switchAuth('login');
             }
-
-            // Menyembunyikan semua halaman
             let pages = document.getElementsByClassName("page");
             for (let i = 0; i < pages.length; i++) {
                 pages[i].style.display = "none";
                 pages[i].classList.remove("fade-in");
             }
-
-            // Menampilkan halaman yang dipilih
             document.getElementById(pageId).style.display = "block";
             document.getElementById(pageId).classList.add("fade-in");
         }
-
-        // Fungsi untuk berpindah antara form Login dan Daftar
         function switchAuth(type) {
             let formLogin = document.getElementById('form-login');
             let formRegister = document.getElementById('form-register');
@@ -52,8 +45,6 @@
             event.preventDefault();
             isLoggedIn = true;
             document.getElementById("status").innerHTML = "Status: Sudah Login";
-            
-            // Ubah tampilan menu navigasi
             document.getElementById("nav-login-btn").style.display = "none";
             document.getElementById("nav-logout-btn").style.display = "block";
             
@@ -64,49 +55,50 @@
         function registerUser(event) {
             event.preventDefault();
             alert("Pendaftaran berhasil! Silakan masuk menggunakan akun baru Anda.");
-            switchAuth('login'); // Langsung arahkan ke tab login setelah daftar
+            switchAuth('login'); 
         }
 
         function logoutUser() {
             isLoggedIn = false;
             document.getElementById("status").innerHTML = "Status: Belum Login";
             
-            // Kembalikan tampilan menu navigasi
             document.getElementById("nav-login-btn").style.display = "block";
             document.getElementById("nav-logout-btn").style.display = "none";
             
             alert("Anda sudah logout!");
             showPage("home");
         }
-        // Fungsi untuk Kalkulator Estimasi Panen (Operasi Perkalian)
+
         function hitungPanen() {
-            // Mengambil nilai dari input HTML
+            
             let luas = document.getElementById("luas-lahan").value;
             let estimasi = document.getElementById("estimasi-per-m2").value;
 
-            // Validasi: pastikan kolom tidak kosong
             if(luas === "" || estimasi === "") {
                 alert("Harap masukkan angka pada kedua kolom untuk menghitung!");
                 return;
             }
-
-            // OPERASI PERKALIAN (*)
             let totalPanen = parseFloat(luas) * parseFloat(estimasi);
-
-            // Menampilkan hasil ke layar
             document.getElementById("hasil-panen").innerHTML = "Estimasi Total Panen: <strong>" + totalPanen + " kg</strong> 🌾";
             
-            // Animasi kecil saat tombol ditekan
             document.getElementById("hasil-panen").style.color = "#ffb300";
             setTimeout(() => {
                 document.getElementById("hasil-panen").style.color = "#1b5e20";
             }, 500);
         }
+       
+        function aturWaktu() {
+            var sekarang = new Date();
+            var waktuSekarang = sekarang.toLocaleString('id-ID'); 
+        
+            document.getElementById("teksWaktu").innerHTML = waktuSekarang;
+            setTimeout(aturWaktu, 1000);
+        }
         
     </script>
 
     <style>
-        /* ===== BACKGROUND SAWAH ===== */
+        
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -116,8 +108,6 @@
             background-attachment: fixed;
             color: #333;
         }
-
-        /* ===== STATUS BAR ===== */
         #status {
             background: #1b5e20;
             color: white;
@@ -128,8 +118,6 @@
             letter-spacing: 1px;
             font-size: 14px;
         }
-
-        /* ===== NAVIGATION ===== */
         nav {
             background: #2e7d32;
             padding: 15px 30px;
@@ -175,7 +163,6 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
-        /* ===== PAGE CARD ===== */
         .page {
             max-width: 900px;
             margin: 40px auto;
@@ -186,7 +173,6 @@
             display: none;
         }
 
-        /* ===== ANIMATION ===== */
         .fade-in {
             animation: fadeEffect 0.6s ease-in-out;
         }
@@ -196,7 +182,6 @@
             to {opacity: 1; transform: translateY(0);}
         }
 
-        /* ===== HEADINGS ===== */
         h1 {
             color: #1b5e20;
             text-align: center;
@@ -218,8 +203,6 @@
         p {
             line-height: 1.6;
         }
-
-        /* ===== EVENT BANNER STYLE ===== */
         .event-banner {
             background: linear-gradient(135deg, #f1f8e9 0%, #dcedc8 100%);
             border-left: 8px solid #ffb300;
@@ -305,7 +288,6 @@
             transform: scale(1.05);
         }
 
-        /* ===== FORM UMUM ===== */
         form {
             background: #f9fdf9;
             padding: 25px;
@@ -352,7 +334,7 @@
             background: #1b5e20;
         }
 
-        /* ===== AUTHENTICATION SECTION ===== */
+    
         .auth-container {
             max-width: 500px;
             margin: 0 auto;
@@ -384,7 +366,7 @@
             color: white;
         }
 
-        /* ===== VIDEO ===== */
+        
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
@@ -404,7 +386,7 @@
             border: none;
         }
 
-        /* ===== KATALOG PERPUSTAKAAN STYLE ===== */
+        
         .book-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -455,7 +437,7 @@
             color: #2e7d32;
         }
 
-        /* ===== FOOTER ===== */
+        
         footer {
             text-align: center;
             background: #1b5e20;
