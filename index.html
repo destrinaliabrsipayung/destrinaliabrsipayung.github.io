@@ -9,7 +9,7 @@
         let isLoggedIn = false;
 
         function showPage(pageId) {
-            if (!isLoggedIn && (pageId === "koleksi" || pageId === "hubungi")) {
+            if (!isLoggedIn && (pageId === "koleksi" || pageId === "hubungi"|| pageId === "tips")) {
                 alert("Silakan login terlebih dahulu untuk mengakses halaman ini!");
                 pageId = "auth";
                 switchAuth('login');
@@ -469,6 +469,7 @@
         <div class="nav-right">
             <button onclick="showPage('home')">Home</button>
             <button onclick="showPage('koleksi')">Koleksi</button>
+            <button onclick="showPage('tips')">Tips Tani</button>
             <button onclick="showPage('hubungi')">Hubungi</button>
             <button onclick="showPage('profil')">Profil</button>
             <button onclick="showPage('admin')">Admin</button>
@@ -643,6 +644,34 @@
             <li>Menjadi ruang kolaborasi dan diskusi masyarakat.</li>
             <li>Mengembangkan layanan informasi berbasis digital.</li>
         </ul>
+    </div>
+
+    <div id="tips" class="page">
+        <h2>🌱 Tips Tani Praktis</h2>
+        <p style="text-align: justify; font-size: 16px;">
+            Kumpulan video edukasi dan panduan sederhana untuk membantu kegiatan pertanian Anda sehari-hari. Tonton videonya dan terapkan langsung di lahan Anda!
+        </p>
+
+        <div style="background: #f9fdf9; padding: 20px; border-radius: 15px; border: 1px solid #c8e6c9; margin-top: 25px;">
+            <h3 style="color: #2e7d32; margin-top: 0; font-size: 18px;">📹 Cara Perawatan Tanaman yang Benar</h3>
+            <div class="video-container" style="margin-top: 15px;">
+                <iframe src="https://www.youtube.com/embed/ANkwRFTCdkU?si=u9MKVshhmXgiXFA_" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div style="background: #f9fdf9; padding: 20px; border-radius: 15px; border: 1px solid #c8e6c9; margin-top: 25px;">
+            <h3 style="color: #2e7d32; margin-top: 0; font-size: 18px;">📹 Teknik Pemupukan Tepat Guna</h3>
+            <div class="video-container" style="margin-top: 15px;">
+                <iframe src="https://www.youtube.com/embed/XBPUTW4AKa0?si=4TKrPx6WlusVWrRV" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div style="background: #f9fdf9; padding: 20px; border-radius: 15px; border: 1px solid #c8e6c9; margin-top: 25px;">
+            <h3 style="color: #2e7d32; margin-top: 0; font-size: 18px;">📹 Strategi Sederhana Pengendalian Hama</h3>
+            <div class="video-container" style="margin-top: 15px;">
+                <iframe src="https://www.youtube.com/embed/YRHcpHWtf6A?si=ctxbs9qDy-PJvm41" allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
 
     <div id="admin" class="page">
