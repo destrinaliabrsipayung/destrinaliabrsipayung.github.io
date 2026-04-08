@@ -14,7 +14,9 @@ for (let i = 0; i < pages.length; i++) {
 pages[i].style.display = "none";
 pages[i].classList.remove("fade-in");}
 document.getElementById(pageId).style.display = "block";
-document.getElementById(pageId).classList.add("fade-in");}
+document.getElementById(pageId).classList.add("fade-in");
+let menu = document.getElementById("nav-menu");
+if(menu) { menu.classList.remove("show-menu"); }}
 function switchAuth(type) {
 let formLogin = document.getElementById('form-login');
 let formRegister = document.getElementById('form-register');
@@ -62,7 +64,10 @@ var sekarang = new Date();
 var waktuSekarang = sekarang.toLocaleString('id-ID'); 
 document.getElementById("teksWaktu").innerHTML = waktuSekarang;
 setTimeout(aturWaktu, 1000);}
-  
+  function toggleMenu() {
+    let menu = document.getElementById("nav-menu");
+    menu.classList.toggle("show-menu");
+}
 </script>
 <style>
 body {
@@ -422,7 +427,8 @@ font-size: 14px;
             <button id="nav-login-btn" onclick="showPage('auth')">👤 Login / Daftar</button>
             <button id="nav-logout-btn" style="display:none;" onclick="logoutUser()">🚪 Logout</button>
         </div>
-        <div class="nav-right">
+        <button class="hamburger" onclick="toggleMenu()">☰ Menu</button>
+        <div class="nav-right"> id="nav-menu">
             <button onclick="showPage('home')">Home</button>
             <button onclick="showPage('koleksi')">Koleksi</button>
             <button onclick="showPage('tips')">Tips Tani</button>
