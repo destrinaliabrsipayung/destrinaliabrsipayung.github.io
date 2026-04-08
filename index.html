@@ -20,8 +20,12 @@ function showPage(pageId) {
     }
     document.getElementById(pageId).style.display = "block";
     document.getElementById(pageId).classList.add("fade-in");
-    
-    // Tutup menu hamburger jika sedang terbuka (khusus HP)
+    let navButtons = document.querySelectorAll('.nav-right button');
+    navButtons.forEach(btn => btn.classList.remove('active-nav'));
+    let activeBtn = document.getElementById('nav-' + pageId);
+    if(activeBtn) {
+        activeBtn.classList.add('active-nav');
+    }
     let navMenu = document.getElementById("nav-menu");
     if (navMenu.classList.contains("active")) {
         navMenu.classList.remove("active");
@@ -161,8 +165,13 @@ function toggleMenu() {
         transform: translateY(-2px);
         box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-
-    /* --- HAMBURGER MENU ICON --- */
+    nav .nav-right button.active-nav {
+        background: #1b5e20;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        border-bottom: 3px solid #ffc107; /* Garis kuning di bawah tombol */
+    }
     .hamburger {
         display: none;
         flex-direction: column;
@@ -525,13 +534,13 @@ function toggleMenu() {
         </div>
 
         <div class="nav-right" id="nav-menu">
-            <button onclick="showPage('home')">Home</button>
-            <button onclick="showPage('koleksi')">Koleksi</button>
-            <button onclick="showPage('tips')">Tips Tani</button>
-            <button onclick="showPage('event')">Event</button>
-            <button onclick="showPage('hubungi')">Hubungi</button>
-            <button onclick="showPage('profil')">Profil</button>
-            <button onclick="showPage('admin')">Admin</button>
+            <button id="nav-home" onclick="showPage('home')">Home</button>
+            <button id="nav-koleksi" onclick="showPage('koleksi')">Koleksi</button>
+            <button id="nav-tips" onclick="showPage('tips')">Tips Tani</button>
+            <button id="nav-event" onclick="showPage('event')">Event</button>
+            <button id="nav-hubungi" onclick="showPage('hubungi')">Hubungi</button>
+            <button id="nav-profil" onclick="showPage('profil')">Profil</button>
+            <button id="nav-admin" onclick="showPage('admin')">Admin</button>
         </div>
     </nav>
 
