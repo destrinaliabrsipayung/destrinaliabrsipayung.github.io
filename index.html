@@ -426,6 +426,7 @@ font-size: 14px;
             <button onclick="showPage('home')">Home</button>
             <button onclick="showPage('koleksi')">Koleksi</button>
             <button onclick="showPage('tips')">Tips Tani</button>
+            <button onclick="showPage('event')">Event</button>
             <button onclick="showPage('hubungi')">Hubungi</button>
             <button onclick="showPage('profil')">Profil</button>
             <button onclick="showPage('admin')">Admin</button>
@@ -441,7 +442,18 @@ font-size: 14px;
             Perpustakaan ini tidak hanya menyediakan koleksi buku umum, tetapi juga menghadirkan sumber informasi yang relevan dengan kebutuhan masyarakat desa, khususnya di bidang pertanian, peternakan, perkebunan, dan pengembangan usaha tani. Sebagai ruang belajar terbuka untuk semua kalangan, perpustakaan ini berfungsi sebagai tempat membaca, berdiskusi, dan berbagi pengetahuan.
         </p>
 
-        <div class="event-banner">
+   <div style="background: #fff8e1; border-left: 6px solid #ffb300; padding: 15px 20px; border-radius: 8px; margin-top: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+            <h3 style="margin: 0 0 10px 0; color: #f57f17;">📢 Info Event Mendatang: NGARIT</h3>
+            <p style="margin: 0 0 15px 0; font-size: 15px;">Jangan lewatkan acara diskusi santai seputar pertanian untuk memaksimalkan hasil lahan Anda akhir pekan ini!</p>
+            <button onclick="showPage('event')" style="background: #ffb300; color: #333; border: none; padding: 8px 16px; border-radius: 20px; font-weight: bold; cursor: pointer; transition: 0.3s;">
+                Cek Detail Event ➔
+            </button>
+        </div>
+    <div id="event" class="page">
+        <h2>📅 Jadwal & Info Event</h2>
+        <p>Halaman ini berisi informasi lengkap mengenai kegiatan, pelatihan, dan diskusi rutin yang diadakan oleh SEED Library.</p>
+
+        <div class="event-banner" style="margin-top: 20px;">
             <span class="event-badge">🔥 Event Mendatang</span>
             <h2>NGARIT (Ngobrol Asik Ringan Seputar perTanian)</h2>
             <p><strong>Topik:</strong> "Tani Cerdas: Rahasia Maksimalkan Lahan, Panen Naik, Untung Menarik"</p>
@@ -459,6 +471,7 @@ font-size: 14px;
                 💬 Daftar via WhatsApp
             </button>
         </div>
+    </div>
         <div class="calc-container" style="background: #e8f5e9; padding: 25px; border-radius: 12px; margin-top: 40px; border-left: 8px solid #4caf50; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
             <h3 style="margin-top: 0; color: #2e7d32;">🧮 Kalkulator Estimasi Panen</h3>
             <p style="font-size: 14px; color: #555; margin-bottom: 20px;">Hitung perkiraan hasil panen berdasarkan luas lahan Anda. Cocok untuk mempraktikkan ilmu dari acara NGARIT!</p>
