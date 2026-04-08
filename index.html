@@ -13,7 +13,7 @@ let pages = document.getElementsByClassName("page");
 for (let i = 0; i < pages.length; i++) {
 pages[i].style.display = "none";
 pages[i].classList.remove("fade-in");}
-document.getElementById(pageId).style.display = "block";
+document.getElementById(pageId)..display = "block";
 document.getElementById(pageId).classList.add("fade-in");}
 function switchAuth(type) {
 let formLogin = document.getElementById('form-login');
@@ -43,7 +43,7 @@ function logoutUser() {
 isLoggedIn = false;
 document.getElementById("status").innerHTML = "Status: Belum Login";
 document.getElementById("nav-login-btn").style.display = "block";
-document.getElementById("nav-logout-btn").style.display = "none";  
+document.getElementById("nav-logout-btn")..display = "none";  
 alert("Anda sudah logout!");
 showPage("home");}
     
@@ -53,9 +53,9 @@ let estimasi = document.getElementById("estimasi-per-m2").value;
 if(luas === "" || estimasi === "") {alert("Harap masukkan angka pada kedua kolom untuk menghitung!");return;}
 let totalPanen = parseFloat(luas) * parseFloat(estimasi);
 document.getElementById("hasil-panen").innerHTML = "Estimasi Total Panen: <strong>" + totalPanen + " kg</strong> 🌾";
-document.getElementById("hasil-panen").style.color = "#ffb300";
+document.getElementById("hasil-panen")..color = "#ffb300";
 setTimeout(() => {
-document.getElementById("hasil-panen").style.color = "#1b5e20";}, 500);}
+document.getElementById("hasil-panen")..color = "#1b5e20";}, 500);}
     
 function aturWaktu() {
 var sekarang = new Date();
@@ -407,6 +407,52 @@ font-size: 14px;
         footer p {
             margin: 0;
         }
+    /* Media Query untuk HP (Layar di bawah 768px) */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Susun ke bawah */
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .nav-right {
+        justify-content: center; /* Menu di tengah */
+        width: 100%;
+        display: flex;
+        overflow-x: auto; /* Agar menu bisa digeser ke samping jika terlalu panjang */
+        white-space: nowrap;
+        padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    nav button {
+        padding: 8px 15px;
+        font-size: 12px;
+        flex-shrink: 0; /* Mencegah tombol gepeng */
+    }
+
+    .page {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .book-container {
+        grid-template-columns: 1fr; /* Buku jadi satu kolom di HP */
+    }
+    
+    /* Membuat scrollbar menu lebih tipis dan cantik di HP */
+    .nav-right::-webkit-scrollbar {
+        height: 4px;
+    }
+    .nav-right::-webkit-scrollbar-thumb {
+        background: #a5d6a7;
+        border-radius: 10px;
+    }
+}
     </style>
 </head>
 
