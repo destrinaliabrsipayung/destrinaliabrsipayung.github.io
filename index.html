@@ -368,7 +368,55 @@ function toggleMenu() {
         background: #2e7d32;
         color: white;
     }
-    
+    /* --- PETA PANDUAN (MAPS) --- */
+    .map-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 25px;
+    }
+    .map-card {
+        background: #f1f8e9;
+        border: 1px solid #c8e6c9;
+        padding: 20px;
+        border-radius: 12px;
+        transition: transform 0.3s;
+        display: flex;
+        flex-direction: column;
+    }
+    .map-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        border-color: #4caf50;
+    }
+    .map-card h3 {
+        margin-top: 0;
+        color: #2e7d32;
+        border-bottom: 2px dashed #a5d6a7;
+        padding-bottom: 10px;
+    }
+    .map-card p {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 15px;
+        flex-grow: 1; /* Mendorong tombol ke bawah agar rata */
+    }
+    .map-card button {
+        background: #2e7d32;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        width: 100%;
+        transition: 0.3s;
+    }
+    .map-card button:hover {
+        background: #1b5e20;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
     /* --- MEDIA --- */
     .video-container {
         position: relative;
@@ -538,6 +586,7 @@ function toggleMenu() {
             <button id="nav-koleksi" onclick="showPage('koleksi')">Koleksi</button>
             <button id="nav-tips" onclick="showPage('tips')">Tips Tani</button>
             <button id="nav-event" onclick="showPage('event')">Event</button>
+            <button id="nav-maps" onclick="showPage('maps')">Peta Website</button>
             <button id="nav-hubungi" onclick="showPage('hubungi')">Hubungi</button>
             <button id="nav-profil" onclick="showPage('profil')">Profil</button>
             <button id="nav-admin" onclick="showPage('admin')">Admin</button>
@@ -669,6 +718,55 @@ function toggleMenu() {
                 
                 <input type="submit" value="Daftar Sekarang">
             </form>
+        </div>
+    </div>
+
+    <div id="maps" class="page">
+        <h2>🗺️ Peta Panduan Website</h2>
+        <p style="font-size: 16px;">Bingung mencari informasi tertentu? Berikut adalah panduan isi dari masing-masing menu di SEED Library. Klik tombol pada masing-masing kotak untuk langsung berpindah ke halaman yang Anda butuhkan.</p>
+
+        <div class="map-grid">
+            <div class="map-card">
+                <h3>🏠 Home</h3>
+                <p>Mencari ringkasan web, pengumuman terbaru, dan ingin menggunakan Kalkulator Estimasi Panen? Silakan ke sini.</p>
+                <button onclick="showPage('home')">Pergi ke Home ➔</button>
+            </div>
+
+            <div class="map-card">
+                <h3>📚 Koleksi</h3>
+                <p>Ingin meminjam atau membaca katalog buku (pertanian, teknologi, manajemen)? Semua daftarnya ada di menu ini.</p>
+                <button onclick="showPage('koleksi')">Pergi ke Koleksi ➔</button>
+            </div>
+
+            <div class="map-card">
+                <h3>🌱 Tips Tani</h3>
+                <p>Mencari video panduan praktis bertani, cara memupuk, dan pengendalian hama? Buka menu ini untuk menonton videonya.</p>
+                <button onclick="showPage('tips')">Pergi ke Tips Tani ➔</button>
+            </div>
+
+            <div class="map-card">
+                <h3>📅 Event</h3>
+                <p>Ingin mendaftar atau melihat jadwal kegiatan seru di perpustakaan (seperti NGARIT & JEPRET TANI)? Temukan infonya di sini.</p>
+                <button onclick="showPage('event')">Pergi ke Event ➔</button>
+            </div>
+
+            <div class="map-card">
+                <h3>📞 Hubungi</h3>
+                <p>Memiliki pertanyaan, kritik, saran, atau ingin menghubungi admin langsung melalui WhatsApp? Silakan kirim pesan di sini.</p>
+                <button onclick="showPage('hubungi')">Pergi ke Hubungi ➔</button>
+            </div>
+
+            <div class="map-card">
+                <h3>📖 Profil</h3>
+                <p>Ingin tahu lebih dalam tentang apa itu SEED Library, beserta visi dan misi perpustakaan desa ini? Baca selengkapnya di sini.</p>
+                <button onclick="showPage('profil')">Pergi ke Profil ➔</button>
+            </div>
+            
+            <div class="map-card">
+                <h3>👤 Admin</h3>
+                <p>Halaman khusus yang berisi profil pembuat website (Curriculum Vitae dan Instagram) serta video edukasi tambahan.</p>
+                <button onclick="showPage('admin')">Pergi ke Admin ➔</button>
+            </div>
         </div>
     </div>
 
