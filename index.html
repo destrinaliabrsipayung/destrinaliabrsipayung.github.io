@@ -1,159 +1,115 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEED Library - Perpustakaan Desa</title>
-
-    <script>
-        let isLoggedIn = false;
-
-        function showPage(pageId) {
-            if (!isLoggedIn && (pageId === "koleksi" || pageId === "hubungi"|| pageId === "tips")) {
-                alert("Silakan login terlebih dahulu untuk mengakses halaman ini!");
-                pageId = "auth";
-                switchAuth('login');
-            }
-            let pages = document.getElementsByClassName("page");
-            for (let i = 0; i < pages.length; i++) {
-                pages[i].style.display = "none";
-                pages[i].classList.remove("fade-in");
-            }
-            document.getElementById(pageId).style.display = "block";
-            document.getElementById(pageId).classList.add("fade-in");
-        }
-        function switchAuth(type) {
-            let formLogin = document.getElementById('form-login');
-            let formRegister = document.getElementById('form-register');
-            let btnLogin = document.getElementById('btn-show-login');
-            let btnRegister = document.getElementById('btn-show-register');
-
-            if (type === 'login') {
-                formLogin.style.display = 'block';
-                formRegister.style.display = 'none';
-                btnLogin.classList.add('active');
-                btnRegister.classList.remove('active');
-            } else {
-                formLogin.style.display = 'none';
-                formRegister.style.display = 'block';
-                btnLogin.classList.remove('active');
-                btnRegister.classList.add('active');
-            }
-        }
-
-        function loginUser(event) {
-            event.preventDefault();
-            isLoggedIn = true;
-            document.getElementById("status").innerHTML = "Status: Sudah Login";
-            document.getElementById("nav-login-btn").style.display = "none";
-            document.getElementById("nav-logout-btn").style.display = "block";
-            
-            alert("Login berhasil! Selamat datang di SEED Library.");
-            showPage("home");
-        }
-
-        function registerUser(event) {
-            event.preventDefault();
-            alert("Pendaftaran berhasil! Silakan masuk menggunakan akun baru Anda.");
-            switchAuth('login'); 
-        }
-
-        function logoutUser() {
-            isLoggedIn = false;
-            document.getElementById("status").innerHTML = "Status: Belum Login";
-            
-            document.getElementById("nav-login-btn").style.display = "block";
-            document.getElementById("nav-logout-btn").style.display = "none";
-            
-            alert("Anda sudah logout!");
-            showPage("home");
-        }
-
-        function hitungPanen() {
-            
-            let luas = document.getElementById("luas-lahan").value;
-            let estimasi = document.getElementById("estimasi-per-m2").value;
-
-            if(luas === "" || estimasi === "") {
-                alert("Harap masukkan angka pada kedua kolom untuk menghitung!");
-                return;
-            }
-            let totalPanen = parseFloat(luas) * parseFloat(estimasi);
-            document.getElementById("hasil-panen").innerHTML = "Estimasi Total Panen: <strong>" + totalPanen + " kg</strong> 🌾";
-            
-            document.getElementById("hasil-panen").style.color = "#ffb300";
-            setTimeout(() => {
-                document.getElementById("hasil-panen").style.color = "#1b5e20";
-            }, 500);
-        }
-       
-        function aturWaktu() {
-            var sekarang = new Date();
-            var waktuSekarang = sekarang.toLocaleString('id-ID'); 
-        
-            document.getElementById("teksWaktu").innerHTML = waktuSekarang;
-            setTimeout(aturWaktu, 1000);
-        }
-        
-    </script>
-
-    <style>
-        
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.9)),
-            url("https://images.unsplash.com/photo-1500382017468-9049fed747ef");
-            background-size: cover;
-            background-attachment: fixed;
-            color: #333;
-        }
-        #status {
-            background: #1b5e20;
-            color: white;
-            padding: 10px;
-            margin: 0;
-            text-align: center;
-            font-weight: bold;
-            letter-spacing: 1px;
-            font-size: 14px;
-        }
-        nav {
-            background: #2e7d32;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
-        .nav-left button {
-            background: #ffc107;
-            color: #333;
-        }
-
-        .nav-left button:hover {
-            background: #ffa000;
-            color: #fff;
-        }
-
-        .nav-right {
-            display: flex;
-            gap: 5px;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-        }
-
-        nav button {
-            background: white;
-            color: #2e7d32;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 14px;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEED Library - Perpustakaan Desa</title>
+<script>
+let isLoggedIn = false;
+function showPage(pageId) {
+if (!isLoggedIn && (pageId === "koleksi" || pageId === "hubungi"|| pageId === "tips")) {
+alert("Silakan login terlebih dahulu untuk mengakses halaman ini!"); pageId = "auth";switchAuth('login');}
+let pages = document.getElementsByClassName("page");
+for (let i = 0; i < pages.length; i++) {
+pages[i].style.display = "none";
+pages[i].classList.remove("fade-in");}
+document.getElementById(pageId).style.display = "block";
+document.getElementById(pageId).classList.add("fade-in");}
+function switchAuth(type) {
+let formLogin = document.getElementById('form-login');
+let formRegister = document.getElementById('form-register');
+let btnLogin = document.getElementById('btn-show-login');
+let btnRegister = document.getElementById('btn-show-register');
+if (type === 'login') {
+formLogin.style.display = 'block';
+formRegister.style.display = 'none';
+btnLogin.classList.add('active');
+btnRegister.classList.remove('active');} else {
+formLogin.style.display = 'none';
+formRegister.style.display = 'block';
+btnLogin.classList.remove('active');
+btnRegister.classList.add('active');}}
+function loginUser(event) {
+event.preventDefault();
+isLoggedIn = true;
+document.getElementById("status").innerHTML = "Status: Sudah Login";
+document.getElementById("nav-login-btn").style.display = "none";
+document.getElementById("nav-logout-btn").style.display = "block";
+alert("Login berhasil! Selamat datang di SEED Library.");showPage("home");}
+function registerUser(event) {event.preventDefault();
+alert("Pendaftaran berhasil! Silakan masuk menggunakan akun baru Anda.");
+switchAuth('login'); }
+function logoutUser() {
+isLoggedIn = false;
+document.getElementById("status").innerHTML = "Status: Belum Login";
+document.getElementById("nav-login-btn").style.display = "block";
+document.getElementById("nav-logout-btn").style.display = "none";  
+alert("Anda sudah logout!");
+showPage("home");}
+    
+function hitungPanen() {
+let luas = document.getElementById("luas-lahan").value;
+let estimasi = document.getElementById("estimasi-per-m2").value;
+if(luas === "" || estimasi === "") {alert("Harap masukkan angka pada kedua kolom untuk menghitung!");return;}
+let totalPanen = parseFloat(luas) * parseFloat(estimasi);
+document.getElementById("hasil-panen").innerHTML = "Estimasi Total Panen: <strong>" + totalPanen + " kg</strong> 🌾";
+document.getElementById("hasil-panen").style.color = "#ffb300";
+setTimeout(() => {
+document.getElementById("hasil-panen").style.color = "#1b5e20";}, 500);}
+    
+function aturWaktu() {
+var sekarang = new Date();
+var waktuSekarang = sekarang.toLocaleString('id-ID'); 
+document.getElementById("teksWaktu").innerHTML = waktuSekarang;
+setTimeout(aturWaktu, 1000);}
+  
+</script>
+<style>
+body {
+margin: 0;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.9)),
+url("https://images.unsplash.com/photo-1500382017468-9049fed747ef");
+background-size: cover;
+background-attachment: fixed;
+color: #333;}
+#status {
+background: #1b5e20;
+color: white;
+padding: 10px;
+margin: 0;
+text-align: center;
+font-weight: bold;
+letter-spacing: 1px;
+font-size: 14px;}
+nav {
+background: #2e7d32;
+padding: 15px 30px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+box-shadow: 0 4px 10px rgba(0,0,0,0.2);}
+.nav-left button {
+background: #ffc107;
+color: #333;}
+.nav-left button:hover {
+background: #ffa000;
+color: #fff;}
+.nav-right {
+display: flex;
+gap: 5px;
+lex-wrap: wrap;
+justify-content: flex-end;}
+nav button {
+background: white;
+color: #2e7d32;
+border: none;
+padding: 10px 20px;
+border-radius: 25px;
+font-weight: bold;
+cursor: pointer;
+transition: all 0.3s ease;
+font-size: 14px;
         }
 
         nav button:hover {
