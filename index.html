@@ -102,6 +102,44 @@ function toggleMenu() {
     let menu = document.getElementById("nav-menu");
     menu.classList.toggle("active");
 }
+   // --- LOGIKA RUANG DISKUSI ---
+function kirimPesan() {
+    // Cek apakah user sudah login
+    if (!isLoggedIn) {
+        alert("Silakan login terlebih dahulu untuk ikut berdiskusi!");
+        showPage('auth');
+        return;
+    }
+
+    let inputField = document.getElementById("chat-input");
+    let pesan = inputField.value.trim();
+
+    // Jika pesan tidak kosong
+    if (pesan !== "") {
+        let chatBox = document.getElementById("chat-box");
+        
+        // Buat elemen div baru untuk pesan
+        let newMessage = document.createElement("div");
+        newMessage.classList.add("chat-message", "user-msg");
+        newMessage.innerHTML = "<strong>Anda:</strong> " + pesan;
+        
+        // Masukkan pesan ke dalam kotak chat
+        chatBox.appendChild(newMessage);
+        
+        // Kosongkan kolom input
+        inputField.value = "";
+        
+        // Otomatis scroll ke pesan paling bawah
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+}
+
+// Fungsi agar bisa kirim pesan menggunakan tombol Enter
+function cekEnterChat(event) {
+    if (event.key === "Enter") {
+        kirimPesan();
+    }
+} 
 </script>
 
 <style>
@@ -498,6 +536,79 @@ function toggleMenu() {
     /* ========================================= */
     
     /* Untuk HP dan Tablet kecil */
+
+    /* --- RUANG DISKUSI (CHAT) --- */
+    .chat-container {
+        background: #fff;
+        border: 1px solid #c8e6c9;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-top: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .chat-box {
+        height: 350px;
+        overflow-y: auto;
+        padding: 20px;
+        background: #f1f8e9;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .chat-message {
+        max-width: 75%;
+        padding: 10px 15px;
+        border-radius: 15px;
+        font-size: 14px;
+        line-height: 1.5;
+        position: relative;
+    }
+    .admin-msg {
+        background: #ffffff;
+        color: #333;
+        align-self: flex-start;
+        border-bottom-left-radius: 2px;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .user-msg {
+        background: #dcedc8;
+        color: #1b5e20;
+        align-self: flex-end;
+        border-bottom-right-radius: 2px;
+        border: 1px solid #c8e6c9;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .chat-input-area {
+        display: flex;
+        padding: 15px;
+        background: white;
+        border-top: 1px solid #c8e6c9;
+        align-items: center;
+    }
+    .chat-input-area input {
+        flex: 1;
+        margin-bottom: 0;
+        border-radius: 25px;
+        padding: 12px 15px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+    }
+    .chat-input-area button {
+        background: #2e7d32;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        margin-left: 10px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    .chat-input-area button:hover {
+        background: #1b5e20;
+        transform: translateY(-2px);
+    }
     @media (max-width: 768px) {
         nav {
             padding: 15px 20px;
@@ -861,6 +972,19 @@ function toggleMenu() {
             <textarea rows="5" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
             <input type="submit" value="Kirim Pesan">
         </form>
+      <h3 style="margin-top: 40px; border-top: 2px solid #e8f5e9; padding-top: 20px;">💬 Ruang Diskusi Terbuka</h3>
+        <p style="font-size: 15px; color: #555;">Diskusikan seputar pertanian, buku, atau tanya jawab dengan warga desa lainnya secara real-time di sini.</p>
+        
+        <div class="chat-container">
+            <div class="chat-box" id="chat-box">
+                <div class="chat-message admin-msg">
+                    <strong>Admin SEED:</strong> Halo! Selamat datang di ruang diskusi SEED Library. Ada yang ingin ditanyakan seputar info panen atau buku hari ini? 🌱
+                </div>
+                </div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Ketik pesan Anda di sini..." onkeypress="cekEnterChat(event)">
+                <button onclick="kirimPesan()">Kirim</button>
+            </div>  
     </div>
 
     <div id="profil" class="page">
